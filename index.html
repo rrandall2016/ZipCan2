@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="google-signin-client_id" content="168937826963-kh4l5flm8igbnkai2tca4pmbtbta66kd.apps.googleusercontent.com">
+  <title></title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://apis.google.com/js/platform.js" async defer></script>
+  <script src="loginscript.js"></script>
+  
+</head>
+
+<body>
+
+   <form class= "box">
+
+    <h1>Welcome to Zipcan</h1>
+    <div class="g-signin2" data-onsuccess="onSignIn" onclick="userName()"></div>
+    <button class="button" onclick="signOut()">Sign out</button>
+   
+   
+
+
+
+    <script>
+      
+
+      function onSignIn(googleUser) {
+        var profile = googleUser.getBasicProfile();
+        // get user profile information
+        console.log(googleUser.getBasicProfile());
+        console.log(googleUser.getBasicProfile().getName());
+        
+      }
+      function userName () {
+        alert("Welcome" + name);
+        window.open("page2.html");
+      }
+        
+  function signOut() {
+        gapi.auth2.getAuthInstance().signOut().then(function() {
+        console.log('user signed out');
+    })
+  }
+    
+    
+      
+    </script>
+    
+  </form>
+</body>
+</html>
